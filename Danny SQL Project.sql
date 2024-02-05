@@ -168,7 +168,7 @@ WITH First_purchase_Customer AS(
  ON m.product_id = s.product_id
  JOIN members me
  ON s.customer_id = me.customer_id
- AND me.join_date < s.order_date)
+ AND me.join_date > s.order_date)
 
  SELECT
  customer_id,
@@ -188,7 +188,7 @@ JOIN menu m
 ON m.product_id = s.product_id
 JOIN members me
 ON s.customer_id = me.customer_id
-AND me.join_date > s.order_date
+AND me.join_date < s.order_date
 )
 SELECT
 customer_id,
